@@ -1,4 +1,4 @@
-module fancylog
+module github.com/calvernaz/flog
 
 go 1.15
 

@@ -3,13 +3,21 @@ package main
 import (
 	"fmt"
 
-	"fancylog"
+	"github.com/calvernaz/flog"
+	"gopkg.in/gookit/color.v1"
 )
 
 func main() {
-	fmt.Println(fancylog.Success)
-	fmt.Println(fancylog.Warning)
-	fmt.Println(fancylog.Error)
-	fmt.Println(fancylog.Info)
-	fmt.Println(fancylog.Symbol('\u2764'))
+	// just symbols
+	fmt.Println(flog.SuccessSym)
+	fmt.Println(flog.WarningSym)
+	fmt.Println(flog.ErrorSym)
+	fmt.Println(flog.InfoSym)
+
+	// add custom symbol not in the library
+	symbol := flog.Symbol{
+		Unicode: '\u2764', // ❤
+		Color:   color.FgRed.Sprintf,
+	}
+	fmt.Println(symbol)
 }
