@@ -2,11 +2,7 @@ package flog
 
 import (
 	"fmt"
-
-	"gopkg.in/gookit/color.v1"
 )
-
-
 
 // Symbol type
 type Symbol struct {
@@ -16,10 +12,11 @@ type Symbol struct {
 }
 
 var (
-	InfoSym    = Symbol{'\u2139', Color(color.Info.Sprintf)}    // ℹ
-	SuccessSym = Symbol{'\u2714', Color(color.Success.Sprintf)} // ✓
-	WarningSym = Symbol{'\u26A0', Color(color.Warn.Sprintf)}    // ⚠
-	ErrorSym   = Symbol{'\u2717', Color(color.Error.Sprintf)}   // ✗
+	InfoSym    = Symbol{'\u2139', InfoColor}    // ℹ
+	SuccessSym = Symbol{'\u2714', SuccessColor} // ✓
+	WarningSym = Symbol{'\u26A0', WarnColor}    // ⚠
+	ErrorSym   = Symbol{'\u2717', ErrorColor}   // ✗
+	StopSym = Symbol{'\u2B23', StopColor} // ⬣
 )
 
 func (s Symbol) String() string {
