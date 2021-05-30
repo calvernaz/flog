@@ -7,7 +7,7 @@ func LogSln(str string) {
 }
 
 func LogSf(format string, a ...interface{}) {
-	fmt.Printf("%s %s", SuccessSym, SuccessColor(format, a))
+	fmt.Printf("%s %s\n", SuccessSym, SuccessColor(format, a))
 }
 
 func LogWln(str string) {
@@ -15,7 +15,7 @@ func LogWln(str string) {
 }
 
 func LogWf(format string, a ...interface{}) {
-	fmt.Printf("%s %s", WarningSym, WarnColor(format, a))
+	fmt.Printf("%s %s\n", WarningSym, WarnColor(format, a))
 }
 
 func LogEln(str string) {
@@ -23,5 +23,9 @@ func LogEln(str string) {
 }
 
 func LogEf(format string, a ...interface{}) {
-	fmt.Printf("%s %s", ErrorSym, ErrorColor(format, a))
+	fmt.Printf("%s %s\n", ErrorSym, ErrorColor(format, a))
+}
+
+func Logln(symbol Symbol, str string) {
+	fmt.Println(symbol, str)
 }

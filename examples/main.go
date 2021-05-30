@@ -23,11 +23,15 @@ func main() {
 	fmt.Println(symbol)
 
 	flog.LogSln("Successfully created!")
-	flog.LogSf("Image %s created in the background\n", "cat.png")
+	flog.LogSf("Image %s created in the background", "cat.png")
 
 	flog.LogWln("Image size too large!")
-	flog.LogWf("Image %s should have maximum size of 48x48\n", "cat.png")
+	flog.LogWf("Image %s should have maximum size of 48x48", "cat.png")
 
 	flog.LogEln("Failed to create!")
 	flog.LogEf("Image %s failed to create with size 64x64", "cat.png")
+
+	flog.Logln(flog.StopSym, flog.StopColor("Received signal to stop"))
+	flog.Logln(flog.StopSym, flog.StopColor("Received signal to stop: %s", "ctrl^c"))
+
 }
